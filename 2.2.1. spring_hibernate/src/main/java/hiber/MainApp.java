@@ -22,15 +22,7 @@ public class MainApp {
       userService.add(new User("Тимур", "Тыжинов", "user4@mail.ru", new Car("VW", 148)));
 
       List<User> users = userService.listUsers();
-      for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         System.out.println("Car model = "+user.getCar().getModel());
-         System.out.println("Car serial = "+user.getCar().getSeries());
-         System.out.println();
-      }
+      users.forEach(user -> System.out.println(user.toString()));
 
       System.out.println(userService.getUserByCar("Mazda",771));
 
